@@ -1,17 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include<time.h>
 
 int main() {
-    int n, rev = 0, org;
-    printf("Enter an integer: ");
-    scanf("%d", &n);
-    org = n;
-    while (n != 0) {
-        rev = rev * 10 + n % 10;
-        n /= 10;
+    int n, number, reverse = 0, original;
+    srand(time(0));
+    number=(rand() % 30000);
+    original = number;
+    while (number != 0) {
+        reverse = reverse * 10 + number % 10;
+        number /= 10;
     }
-    if (org == rev)
-        printf("%d is a palindrome.\n", org);
+    if (original == reverse)
+    {
+        printf("%d is a palindrome.\n", original);
+    }
     else
-        printf("%d is not a palindrome.\n", org);
+    {
+        printf("%d is not a palindrome.\n", original);
+    }
     return 0;
 }
